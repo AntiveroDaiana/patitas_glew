@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Patitas Glew - Home</title>
 </head>
 <body class="gridIndex">
@@ -32,7 +32,7 @@
     <main>
         <img class="FullWidth" src="img/b-home.png" alt="banner-home">
         <section class="container">
-                    <article class="iluminacion animate__jello">
+                    <article class="iluminacion">
                         <p>BIENVENIDOS!</p>
                         <p>BIENVENIDOS!</p>
                     </article>
@@ -46,15 +46,15 @@
         </div>
                     
         <div class="boxicon">                
-            <div class="boxicon-logos">
+            <div data-aos="zoom-in" class="boxicon-logos">
                 <img src="img/icons/pulgar-arriba-color.png" alt="empatia">
                 <p>Empatía</p>
             </div>
-            <div class="boxicon-logos">
+            <div data-aos="zoom-in" class="boxicon-logos">
                 <img src="img/icons/perro-color.png" alt="amor">
                 <p>Amor</p>
             </div>
-            <div class="boxicon-logos">
+            <div data-aos="zoom-in" class="boxicon-logos">
                 <img src="img/icons/puno.png" alt="compromiso">
                 <p>Compromiso</p> 
             </div>    
@@ -97,6 +97,10 @@
                 </section>      
             </article>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
     </body>
 </html>
 
