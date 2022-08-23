@@ -1,0 +1,504 @@
+html {
+  font-size: 62.5%;   /* para que un rem equivale 10px */
+}
+
+body {
+  font-size: 1.6rem;    /* para que un rem equivale 10px */
+}
+
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  align-items: center;
+}
+
+/*           INDEX         */
+
+.gridIndex {
+  display: grid;
+  grid-template-columns: repeat(3,33.3%);
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: 
+  "header header header"
+  "topnav topnav topnav"
+  "main main main"
+  "footer footer footer";
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: auto 30%;
+  grid-template-areas: 
+  "icono icono2"
+  "nav nav";
+}
+
+.icono {
+  grid-area: icono;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 10%;
+}
+
+.icono img {
+  margin-top: 8%;
+  margin-left: 5%;
+  width: 20%;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.topnav a:hover, .icono img:hover, .barraNav img:hover {
+  background-color: #9ec0e7;
+}  
+
+.barraNav {
+  grid-area: icono2;
+  display: flex;
+  justify-content: center;
+}
+
+.barraNav img {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  border-radius: 10px;
+  width: 15%;
+  background:rgb(255, 255, 255);
+}
+
+.topnav {
+  grid-area: nav;
+  background-color: #62c09e;
+  padding:1%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+.myLinks a {
+  text-decoration: none;
+  color:white; 
+}
+
+main {
+  grid-area: main;
+  background-image: url(../img/background-dog.jpg);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "FullWidth"
+  "container"
+  "texto"
+  "boxicon";
+  }
+
+.FullWidth {
+  grid-area: FullWidth;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  grid-area: container;
+  background-color: rgba(0, 0, 0, 0.363);
+  display: flex;
+  justify-content: center;
+}
+
+.iluminacion {
+  width: 600px;
+  height: 200px;
+  position: relative;
+}
+.iluminacion :last-child {
+  filter: blur( 6px );
+}
+.iluminacion p {
+  font-size: 500%;
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate( -50%, -50% );
+}
+
+.text {
+  grid-area: texto;
+  background-color: rgba(0, 0, 0, 0.363);
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-size: 130%;
+  display: flex;
+  justify-content: center;
+}
+
+.boxicon {
+  grid-area: boxicon;
+  background-color: rgba(0, 0, 0, 0.363);
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+}
+
+.boxicon-logos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.boxicon-logos img {
+  width: 50%;
+}
+.boxicon-logos p {
+  color: white;
+  font-size: 150%;
+}
+
+/*              VISTA MOBILE INDEX         */
+
+@media only screen and (max-width: 768px) {
+  .gridIndex {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "footer footer";
+  }
+
+  header {grid-area: header}
+  header .icono {width: 250%;}
+  header .barraNav img {width:30%;align-items: center;}
+  main {grid-area: main;}
+  .iluminacion p {font-size: 50px;}
+  .text {font-size: 25px;}
+  .boxicon-logos {display: flex; flex-direction: column;}
+  footer {grid-area: footer;};
+  .footerHorizontal {display: flex;flex-direction: column}
+
+}
+
+/*           Linkedog              */
+
+.gridLinkedog {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas: 
+  "banner2 banner2"
+  "m1 m2"
+  "m3 m4"
+  "m5 m6"
+  "m7 m8";
+}
+
+.m1 {grid-area: m1;}
+.m2 {grid-area: m2;}
+.m3 {grid-area: m3;}
+.m4 {grid-area: m4;}
+.m5 {grid-area: m5;}
+.m6 {grid-area: m6;}
+.m7 {grid-area: m7;}
+.m8 {grid-area: m8;}
+
+
+.bannerlinkedog {
+  text-align: center;
+  grid-area: banner2;
+  width: 100%;}
+.bannerlinkedog img{
+  width: 100%;
+}
+.bannerlinkedog h1 {
+  font-size: 60px;
+  background-color: #62c09e6b;
+}
+.mascota {
+  display:flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 2%;
+  width: 55%;
+  background-color: #9ec0e7;  
+}
+
+.mascota img {
+  width: 80%;
+  border-radius: 2%;
+}
+.mascota h3 {
+  color:white;
+}
+.mascota li {
+  text-align: justify;
+  list-style-type:none;
+  font-size: 12px;
+}
+.mascota input {
+  margin: 3px;
+  padding: 2px;
+  width: 80px;
+  border-radius: 10px;
+  color: white;
+  font-style: bold;
+  background-color: hsl(330, 59%, 74%);
+}
+.mascota  input:hover {
+  background-color: white;
+  font-style: bold;
+  color: hsl(330, 59%, 74%);
+}
+/*     VISTA MOBILE LINKEDOG            */
+
+@media only screen and (max-width: 768px) {
+  
+  .gridLinkedog {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9,auto) ;
+    grid-template-areas: 
+    "banner2"
+    "m1"
+    "m2"
+    "m3" 
+    "m4"
+    "m5" 
+    "m6"
+    "m7" 
+    "m8";
+  }
+.bannerlinkedog {grid-area: banner2;}
+.m1 {grid-area: m1;}
+.m2 {grid-area: m2;}
+.m3 {grid-area: m3;}
+.m4 {grid-area: m4;}
+.m5 {grid-area: m5;}
+.m6 {grid-area: m6;}
+.m7 {grid-area: m7;}
+.m8 {grid-area: m8;}
+}
+/*___________________________________________________________*/
+
+/* Donaciones */
+.gridDonaciones {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: 
+  "banner banner"
+  "don1 don2"
+  "don3 don4"
+  "masdon masdon";
+}
+.bannerdonacion {grid-area: banner}
+.donacion1 {grid-area: don1;}
+.donacion2 {grid-area: don2;}
+.donacion3 {grid-area: don3;}
+.donacion4 {grid-area: don4;}
+
+.bannerdonacion h1{
+  font-size: 60px;
+  text-align: center;
+  background-color:#62c09e6b;
+}
+.bannerdonacion img{
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.don {
+  display:flex;
+  flex-direction: column;
+  margin: 2%;
+  padding: 2%;
+}
+
+.don a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.don img {
+  width: 80%;
+  border-radius: 10px;
+}
+.masdonaciones {
+  grid-area: masdon;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.OtrasDonaciones {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.OtrasDonaciones:hover {
+  background-color: #9ec0e7;
+  color: black;
+}
+.masdonaciones a {
+  text-decoration: none;
+}
+
+.botonDonacion {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 150%;
+  margin: 15%;
+  padding: 10px;
+  border-radius: 10px;
+}
+/*___________________________________________________________*/
+
+/*CONTACTANOS */
+
+.formulario {
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color:hsl(330, 59%, 74%) ;
+   margin: 20px;
+   padding: 50px;
+  }
+
+.formulario h1 {
+  font-size: 60px;
+  color: black;
+  text-align: center;
+}  
+.BoxContacto {
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.enviar {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 2px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    font-style: bold;
+    background-color: #9ec0e7;
+}
+.enviar:hover {
+  background-color: #62c09e;
+  font-style: bold;
+  color: black;
+}
+
+
+/* _____________________________________________________ */
+
+/* quienes  somos */
+.GridQuienes {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+  "h1"
+  "cont1"
+  "cont2"
+  "cont3";
+}
+
+.GridQuienes h1{
+  grid-area: h1;
+  text-align: center;
+  font-size: 60px;
+  background-color: #62c09e6b;
+}
+.GridQuienes img{
+background-image: url(../img/background-dog.jpg);
+border-radius: 10px;
+width: 50%;
+}
+.cont1 {grid-area: cont1;}
+.cont2 {grid-area: cont2;}
+
+.cont1, .cont2, .cont3{
+  border-radius: 5%;
+  background-color: white;
+  width: 80%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin: 5%;
+}
+.cont2 p, .cont3 p, .cont1 p {
+  padding: 10px;
+  font-size: 24px;
+  font-style: italic;
+}
+.cont3 {
+  grid-area: cont3;
+  float:inline-start;
+}
+@media only screen and (max-width: 768px) { 
+.GridQuienes {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+  "h1"
+  "cont1"
+  "cont2"
+  "cont3";
+}
+.GridQuienes h1 {font-size: 305%;}
+.cont1, .cont2, .cont3 { display: flex;justify-content: center;
+  flex-wrap: wrap;}
+}
+
+/* Footer */
+
+footer {grid-area: footer;}
+
+.footerHorizontal {
+  background-color: #9ec0e7;
+  padding: 15px 0;
+}
+.footerHorizontal img {
+    border-radius: 255px;
+    width: 70px;
+}
+.footerHorizontal  ul {
+  padding: 10px;
+  list-style-type: none;
+  display: flex; 
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.texto {
+  margin-top: 2%;
+  text-align: center;
+}
+.footerHorizontal li {
+  margin: 10px; 
+}
+
